@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Imersão Alura</title>
+    <link rel="shortcut icon" href="./src/assets/icons/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./src/styles/reset.css">
-    <link rel="stylesheet" href="./src/styles/vars.css">   
+    <link rel="stylesheet" href="./src/styles/vars.css">
     <link rel="stylesheet" href="./src/styles/sidebar-footer.css">
     <link rel="stylesheet" href="./src/styles/main-content.css">
-    <!-- Links para trazer os ícones via CDN(Content Delivery Network) -->
+    <link rel="stylesheet" href="./src/styles/media-queries.css">
+<!-- Links para trazer os ícones via CDN(Content Delivery Network) -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css"
-    integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
+        integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css"
-    integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
 </head>
 <body>
     <div class="sidebar">
@@ -41,25 +43,24 @@
             <div class="library__content">
                 <button class="library__button">
                     <span class="fa fas fa-book"></span>
-                    <span>Sua Biblioteca</span>
+                    <span>Sua biblioteca</span>
                 </button>
                 <span class="fa fa-plus"></span>
             </div>
-
             <section class="section-playlist">
                 <div class="section-playlist__content">
                     <span class="text title">Crie a sua primeira playlist</span>
                     <span class="text subtitle">É fácil, vamos te ajudar.</span>
                     <button class="section-playlist__button">
-                        <span>Criar Playlist</span> 
+                        <span>Criar playlist</span>
                     </button>
                 </div>
             </section>
             <div class="cookies">
-                <a href="#">Cookies</a>
+                <a href="">Cookies</a>
             </div>
-            <div class="language">
-                <button class="language__button">
+            <div class="languages">
+                <button class="languages__button">
                     <span class="fa fa-globe"></span>
                     <span>Português do Brasil</span>
                 </button>
@@ -72,24 +73,163 @@
             <nav class="header__navigation">
                 <div class="navigation">
                     <button class="arrow-left">
-                        <img src="./src/assets/icons/small-left.png" alt="Seta Esquerda">
+                        <img src="./src/assets/icons/small-left.png" alt="" />
                     </button>
                     <button class="arrow-right">
-                        <img src="./src/assets/icons/small-right.png" alt="Seta Direita">
+                        <img src="./src/assets/icons/small-right.png" alt="" />
                     </button>
-                    <div class="header__search">
-                        <img src="./src/assets/icons/search.png" alt="">
-                        <input id="search-input" type="text" maxlength="800" placeholder="O que você quer ouvir?">
-                    </div>
-                    <div class="header__login">
-                        <button class="subscribe">Inscreva-se</button>
-                        <button class="login">Entrar</button>
-                    </div>
+                </div>
+                <div class="header__search">
+                    <img src="./src/assets/icons/search.png" alt="" />
+                    <input id="search-input" maxlength="800" autocorrect="off" autocapitalize="off" spellcheck="false"
+                        placeholder="O que você quer ouvir?" value="" />
+                </div>
+                <div class="header__login">
+                    <button class="subscribe">Inscreva-se</button>
+                    <button class="login">Entrar</button>
                 </div>
             </nav>
+            <!-- PLAYLIST -->
+            <div class="playlist-container">
+                <div id="result-playlists">
+                    <div class="playlist">
+                        <!-- Bom dia! / Boa tarde! / Boa noite! -->
+                        <h1 id="greeting">Boas vindas</h1>
+                        <h2 class="session">Navegar por todas as seções</h2>
+                    </div>
+                    <!-- LIST DE CARDS -->
+                    <div class="offer__scroll-container">
+                        <div class="offer__list">
+                            <section class="offer__list-item">
+                                <!-- CARD 1 -->
+                                <a href="" class="cards">
+                                    <div class="cards card1">
+                                        <img src="./src/assets/playlist/DailyMix1.jfif" alt="" />
+                                        <span>Daily Mix 1</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 2 -->
+                                <a href="" class="cards">
+                                    <div class="cards card2">
+                                        <img src="./src/assets/playlist/DailyMix2.jfif" alt="" />
+                                        <span>Daily Mix 2</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 3 -->
+                                <a href="" class="cards">
+                                    <div class="cards card3">
+                                        <img src="./src/assets/playlist/DailyMix3.jfif" alt="" />
+                                        <span>Daily Mix 3</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 4 -->
+                                <a href="" class="cards">
+                                    <div class="cards card4">
+                                        <img src="./src/assets/playlist/DailyMix4.jfif" alt="" />
+                                        <span>Daily Mix 4</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 5 -->
+                                <a href="" class="cards">
+                                    <div class="cards card5">
+                                        <img src="./src/assets/playlist/DailyMix5.jfif" alt="" />
+                                        <span>Daily Mix 5</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 6 -->
+                                <a href="" class="cards">
+                                    <div class="cards card6">
+                                        <img src="./src/assets/playlist/DailyMix6.jfif" alt="" />
+                                        <span>Daily Mix 6</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 7 -->
+                                <a href="" class="cards">
+                                    <div class="cards card7">
+                                        <img src="./src/assets/playlist/ThisIsSystemOfADown.jpg" alt="" />
+                                        <span>This is System Of A Down</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 8 -->
+                                <a href="" class="cards">
+                                    <div class="cards card8">
+                                        <img src="./src/assets/playlist/MixAnos90.jfif" alt="" />
+                                        <span>Mix Anos 90</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 9 -->
+                                <a href="" class="cards">
+                                    <div class="cards card9">
+                                        <img src="./src/assets/playlist/ThisIsControlMachete.jpg" alt="" />
+                                        <span>This is Control Machete</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 10 -->
+                                <a href="" class="cards">
+                                    <div class="cards card10">
+                                        <img src="./src/assets/playlist/ThisIsLosChalchaleros.jpg" alt="" />
+                                        <span>This Is Los Chalchaleros</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 11 -->
+                                <a href="" class="cards">
+                                    <div class="cards card11">
+                                        <img src="./src/assets/playlist/MixMetal.jfif" alt="" />
+                                        <span>Mix Metal</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 12 -->
+                                <a href="" class="cards">
+                                    <div class="cards card12">
+                                        <img src="./src/assets/playlist/ThisIswavetoearth.jpg" alt="" />
+                                        <span>This Is wave to earth</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 13 -->
+                                <a href="" class="cards">
+                                    <div class="cards card13">
+                                        <img src="./src/assets/playlist/ThisIsblink-182.jpg" alt="" />
+                                        <span>This Is blink-182</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 14 -->
+                                <a href="" class="cards">
+                                    <div class="cards card14">
+                                        <img src="./src/assets/playlist/MixOitão.jfif" alt="" />
+                                        <span>Mix de Oitão</span>
+                                    </div>
+                                </a>
+                                <!-- CARD 15 -->
+                                <a href="" class="cards">
+                                    <div class="cards card15">
+                                        <img src="./src/assets/playlist/MixLatino.jfif" alt="" />
+                                        <span>Mix Latino</span>
+                                    </div>
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div id="result-artist" class="hidden">
+                    <div class="grid-container">
+                        <div class="artist-card" id="">
+                            <div class="card-img">
+                                <img id="artist-img" class="artist-img" />
+                                <div class="play">
+                                    <span class="fa fa-solid fa-play"></span>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <a title="Foo Fighters" class="vst" href=""></a>
+                                <span class="artist-name" id="artist-name"></span>
+                                <span class="artist-categorie">Artista</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
     </main>
     <footer class="disclaimer-premium">
         <div class="text">
@@ -102,5 +242,7 @@
         <div class="button">
             <button type="button">Inscreva-se grátis</button>
         </div>
+    </footer>
+    <script src="script.js" type="text/javascript"></script>
 </body>
 </html>
