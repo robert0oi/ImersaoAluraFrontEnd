@@ -16,11 +16,10 @@ function displayResults(result, searchTerm) {
 
     const filteredArtists = result.filter(artist => artist.name.toLowerCase().includes(searchTerm));
 
-    // Se houver mais de 4 artistas, adiciona a classe para ajuste do layout
     if (filteredArtists.length > 4) {
-        gridContainer.classList.add('multi-line'); // Adiciona classe extra para CSS
+        gridContainer.classList.add('multi-line');
     } else {
-        gridContainer.classList.remove('multi-line'); // Remove se não for necessário
+        gridContainer.classList.remove('multi-line');
     }
 
     filteredArtists.forEach(artist => {
